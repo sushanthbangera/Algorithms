@@ -15,15 +15,15 @@ public class PythagoreanTripletFinder {
     public static boolean isPythagoreanTripletExists(int arr[]) {
         int arrLen = arr.length;
         
-        // Store the squares of the values in their respective index
+        // Store the squares of the values in their respective index - O(n)
         for(int i = 0; i < arrLen; i++) {
             arr[i] = arr[i] * arr[i];
         }
-        // Sort the array 
+        // Sort the array  - O(nLogn)
         Arrays.sort(arr);
         
         // The last element is considered as a and (b, c) pair is searched
-        // in the sub array
+        // in the sub array - O(n)
         for(int i = arrLen - 1; i >= 2; i--) {
             int l = 0;// first element 
             int r = i - 1; // last element of sub array arr[0....i-1]
