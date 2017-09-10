@@ -1,4 +1,7 @@
 
+/*
+ Program to rorate an array by 'd' positions towards left
+*/
 package algorithms;
 
 import utils.Utility;
