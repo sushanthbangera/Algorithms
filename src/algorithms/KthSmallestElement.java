@@ -1,5 +1,9 @@
 package algorithms;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  *
  * @author Sushanth Bangera
@@ -43,8 +47,30 @@ public class KthSmallestElement {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 3, 6, 10, 4, 5, 25};
-        System.out.println(getKthSmallestElement(arr, 0, arr.length - 1, 3));
+//        int arr[] = {1, 3, 6, 10, 4, 5, 25};
+//        System.out.println(getKthSmallestElement(arr, 0, arr.length - 1, 3));
+        
+        String s = "ba";
+       // s = s.replaceAll(" ", "");
+        int len = s.length();
+        List<String> cList = new ArrayList<>();
+        
+        for(int i = 0; i < len; i++) {
+            for(int j = i + 1; j <= len; j++) {
+                String sub = s.substring(i, j);
+                if(sub.trim().length() > 0) {
+                    cList.add(sub);
+                }
+             
+            }
+        }
+        
+        Collections.sort(cList);
+        for(String str : cList) {
+            System.out.println(str);
+        }
+        
+        
     }
 
 }
