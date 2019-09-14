@@ -28,6 +28,8 @@ public class SumPairsCounter {
     public int getSumPairs(int arr[], int sum) {
         int pairs = 0, len = arr.length;
         Map<Integer, Integer> numMap = new HashMap<>();
+        
+        
 
         for (int a : arr) {
             if (!numMap.containsKey(a)) {

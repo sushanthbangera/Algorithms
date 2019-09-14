@@ -12,7 +12,6 @@ package algorithms;
 public class FirstDuplicate {
      
     public static void main(String[] args) {
-        
         int arr[] = {1, 5, 6, 4, 2, 3};
         int len = arr.length;
         int firstDuplicate = getFirstDuplicate(arr, len);   
@@ -25,7 +24,6 @@ public class FirstDuplicate {
     
     public static int getFirstDuplicate(int arr[], int n) {
         int map[] = new int[10];
-        
         for(int i = 0; i < n; i++) {
             int val = map[arr[i]];
             if(val == 1) {
