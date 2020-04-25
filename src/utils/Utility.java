@@ -12,4 +12,10 @@ public class Utility {
             System.out.print(a + " ");
         }
     }
+    
+    public static void printArray(Long arr[]) {
+        for(Long a : arr) {
+            System.out.print(a + " ");
+        }
+    }
 }
