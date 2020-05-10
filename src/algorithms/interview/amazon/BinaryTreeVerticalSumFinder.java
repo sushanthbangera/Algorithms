@@ -5,10 +5,10 @@
  */
 package algorithms.interview.amazon;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import utils.binarytree.BinaryNode;
+import utils.binarytree.DNode;
 
 /**
  *               (1)
@@ -22,10 +22,13 @@ public class BinaryTreeVerticalSumFinder {
     
     public static void main(String[] args) {
         BinaryNode headNode = createTestNode();
-        Map<Integer, Integer> countMap = new TreeMap<>();
         
+        // Using Hashing
+        Map<Integer, Integer> countMap = new TreeMap<>();
         inOrderVerticalSum(headNode, 0, countMap);
         printVerticalSum(countMap);
+        
+        
     }
     
     private static void inOrderVerticalSum(BinaryNode currentNode, int horizontalDist, Map<Integer, Integer> countMap) {
@@ -48,6 +51,14 @@ public class BinaryTreeVerticalSumFinder {
         countMap.entrySet().forEach(item -> {
             System.out.println(item.getKey() + " - " + item.getValue());
         });
+    }
+    
+    private static void doublyLLVerticalSum() {
+        
+    }
+    
+    private static void verticalSumDoublyLLUtil(BinaryNode node, DNode doublyNode) {
+        
     }
     
     private static BinaryNode createTestNode() {
