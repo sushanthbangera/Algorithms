@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Solution to https://www.hackerrank.com/challenges/queens-attack-2/problem
  */
 package algorithms;
 
@@ -13,7 +11,7 @@ public class QueensAttackCounter {
     
     
     static int queensAttackOptimalSolution(int boardSize, int obstacleCount, int queen_x, int queen_y, int[][] obstacles) {
-        int count = 0;
+        int count;
         
         int south = queen_y - 1;
         int north = boardSize - queen_y;
@@ -30,22 +28,22 @@ public class QueensAttackCounter {
             int ox = obstacles[i][0];
             int oy = obstacles[i][1];
             
-            // if x axis is same is same and queen is above the obstacle
+            // if x axis is same and queen is above the obstacle
             if (ox == queen_x && queen_y > oy) {
                 south = Math.min(south,  queen_y - oy - 1);
             } 
             
-             // if x axis is same is same and queen is below the obstacle
+             // if x axis is same and queen is below the obstacle
             if (ox == queen_x && queen_y < oy) {
                 north = Math.min(north,  oy - queen_y - 1);
             }
             
-            // if y axis is same is same and queen is right the obstacle
+            // if y axis is same and queen is right the obstacle
             if (oy == queen_y && queen_x > ox) {
                 west = Math.min(west, queen_x - ox - 1);
             }
             
-            // if y axis is same is same and queen is left the obstacle
+            // if y axis is same and queen is left the obstacle
             if (oy == queen_y && queen_x < ox) {
                 east = Math.min(east, ox - queen_x - 1);
             }
