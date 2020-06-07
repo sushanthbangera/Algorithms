@@ -18,4 +18,18 @@ public class Utility {
             System.out.print(a + " ");
         }
     }
+    
+    public static void printArray(String arr[]) {
+        for (String a : arr) {
+            System.out.print(a + " ");
+        }
+        System.out.println();
+    }
+
+    public static void printArray(char arr[]) {
+        for (char a : arr) {
+            System.out.print(a + " ");
+        }
+        System.out.println();
+    }
 }
