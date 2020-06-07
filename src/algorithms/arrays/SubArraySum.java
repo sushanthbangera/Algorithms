@@ -29,20 +29,20 @@ class SubArraySum {
 
     public static void printSubArraySumIndexes(int arr[], int N, int targetSum) {
         int startIndex = 0, stopIndex = 0;
-        int curr_sum = arr[0];
+        int currentSum = arr[0];
 
         for (int i = 1; i < N; i++) {
             // If Sum is greater than target sum remove the starting elements
-            while (curr_sum > targetSum && startIndex < i - 1) {
-                curr_sum = curr_sum - arr[startIndex];
+            while (currentSum > targetSum && startIndex < i - 1) {
+                currentSum = currentSum - arr[startIndex];
                 startIndex++;
             }
             // Print the start index and last index of sub array
-            if (curr_sum == targetSum) {
+            if (currentSum == targetSum) {
                 System.out.println(startIndex + " " + stopIndex);
                 return;
             }
-            curr_sum += arr[i];
+            currentSum += arr[i];
             stopIndex++;
         }
         System.out.println(-1);
