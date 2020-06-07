@@ -3,7 +3,7 @@
  like push(), pop(), isEmpty() and an additional operation getMinimum() which should return minimum element 
  from the SpecialStack. Your task is to complete all the functions, using stack data-Structure.
  */
-package algorithms;
+package algorithms.stack;
 
 import java.util.Stack;
 
