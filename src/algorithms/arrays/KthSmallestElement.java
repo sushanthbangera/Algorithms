@@ -25,7 +25,7 @@ public class KthSmallestElement {
         return Integer.MAX_VALUE;
     }
 
-    // Similar to quicksort technoque, last element is taken as pivot
+    // Similar to quicksort technique, last element is taken as pivot
     // and smaller elements are moved left of it and greater elements are 
     // moved right of it
     private static int partition(int arr[], int l, int r) {
