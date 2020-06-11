@@ -4,7 +4,7 @@
  */
 package algorithms.trees;
 
-import utils.binarytree.Node;
+import utils.binarytree.TreeNode;
 
 /**
  *
@@ -12,7 +12,7 @@ import utils.binarytree.Node;
  */
 public class SubTreeCheck {
     
-    public boolean isSubTree(Node mainTree, Node subTree) {
+    public boolean isSubTree(TreeNode mainTree, TreeNode subTree) {
         
         if (subTree == null) {
             return true; // null tree is always a sub tree
@@ -32,7 +32,7 @@ public class SubTreeCheck {
                 isIdentical(mainTree.getRight(), subTree.getRight());
     }
     
-   public static boolean isIdentical(Node node1, Node node2) {
+   public static boolean isIdentical(TreeNode node1, TreeNode node2) {
         
         if (node1 == null && node2 == null) {
             return true;

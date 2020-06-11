@@ -9,15 +9,15 @@ package utils.binarytree;
  *
  * @author Sushanth Bangera
  */
-public class Node {
+public class TreeNode {
     
     private Integer data;
     
-    private Node left;
+    private TreeNode left;
     
-    private Node right;
+    private TreeNode right;
 
-    public Node(Integer data) {
+    public TreeNode(Integer data) {
         this.data = data;
     }
 
@@ -29,19 +29,19 @@ public class Node {
         this.data = data;
     }
 
-    public Node getLeft() {
+    public TreeNode getLeft() {
         return left;
     }
 
-    public void setLeft(Node left) {
+    public void setLeft(TreeNode left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    public TreeNode getRight() {
         return right;
     }
 
-    public void setRight(Node right) {
+    public void setRight(TreeNode right) {
         this.right = right;
     }
    

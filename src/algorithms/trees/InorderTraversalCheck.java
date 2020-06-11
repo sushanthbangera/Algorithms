@@ -6,7 +6,7 @@ package algorithms.trees;
 
 import java.util.ArrayList;
 import java.util.List;
-import utils.binarytree.Node;
+import utils.binarytree.TreeNode;
 
 /**
  *
@@ -17,7 +17,7 @@ public class InorderTraversalCheck {
     /*
      2 list are used which can be optimized
      */
-    public static boolean checkInoderTraversal(Node n1, Node n2) {
+    public static boolean checkInoderTraversal(TreeNode n1, TreeNode n2) {
 
         List<Integer> node1List = new ArrayList<>();
         inorderTraversal(n1, node1List);
@@ -33,7 +33,7 @@ public class InorderTraversalCheck {
      Time Complexity: O(m + n)
      Space Complexity: O(m + n) //  list and inorder traversal
      */
-    public static boolean checkInoderTraversal2(Node n1, Node n2) {
+    public static boolean checkInoderTraversal2(TreeNode n1, TreeNode n2) {
 
         List<Integer> node1List = new ArrayList<>();
         inorderTraversal(n1, node1List);
@@ -42,7 +42,7 @@ public class InorderTraversalCheck {
         return (checkInorderTraversal(n2, node1List) && node1List.isEmpty());
     }
 
-    private static void inorderTraversal(Node node, List<Integer> nodeList) {
+    private static void inorderTraversal(TreeNode node, List<Integer> nodeList) {
         if (node == null) {
             return;
         }
@@ -51,7 +51,7 @@ public class InorderTraversalCheck {
         inorderTraversal(node.getRight(), nodeList);
     }
 
-    private static boolean checkInorderTraversal(Node node, List<Integer> nodeList1) {
+    private static boolean checkInorderTraversal(TreeNode node, List<Integer> nodeList1) {
         if (node == null) {
             return true;
         }
@@ -69,19 +69,19 @@ public class InorderTraversalCheck {
 
     public static void main(String[] args) {
 
-        Node root = new Node(5);
-        root.setLeft(new Node(3));
-        root.getLeft().setLeft(new Node(1));
+        TreeNode root = new TreeNode(5);
+        root.setLeft(new TreeNode(3));
+        root.getLeft().setLeft(new TreeNode(1));
 
-        root.setRight(new Node(7));
-        root.getRight().setLeft(new Node(6));
+        root.setRight(new TreeNode(7));
+        root.getRight().setLeft(new TreeNode(6));
 
-        Node root2 = new Node(3);
-        root2.setLeft(new Node(1));
+        TreeNode root2 = new TreeNode(3);
+        root2.setLeft(new TreeNode(1));
 
-        root2.setRight(new Node(6));
-        root2.getRight().setLeft(new Node(5));
-        root2.getRight().setRight(new Node(7));
+        root2.setRight(new TreeNode(6));
+        root2.getRight().setLeft(new TreeNode(5));
+        root2.getRight().setRight(new TreeNode(7));
 
         if (checkInoderTraversal(root, root2)) {
             System.out.println("Trees have same inorder traversal");

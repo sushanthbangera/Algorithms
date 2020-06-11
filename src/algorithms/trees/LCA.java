@@ -4,7 +4,7 @@
  */
 package algorithms.trees;
 
-import utils.binarytree.Node;
+import utils.binarytree.TreeNode;
 
 /**
  *
@@ -12,7 +12,7 @@ import utils.binarytree.Node;
  */
 public class LCA {
     
-    public static Node LCA (Node root, Node n1, Node n2) {
+    public static TreeNode LCA (TreeNode root, TreeNode n1, TreeNode n2) {
         
         if (root == null) {
             return null;
@@ -22,9 +22,9 @@ public class LCA {
             return root;
         }
        
-        Node left = LCA (root.getLeft(), n1, n2);
+        TreeNode left = LCA (root.getLeft(), n1, n2);
         
-        Node right = LCA (root.getRight(), n1, n2);
+        TreeNode right = LCA (root.getRight(), n1, n2);
         
         if (left == null && right == null) {
             return null;
@@ -39,30 +39,30 @@ public class LCA {
     
     public static void main(String[] args) {
 
-        Node root = new Node(3);
+        TreeNode root = new TreeNode(3);
         
-        Node a = new Node(6);
+        TreeNode a = new TreeNode(6);
         root.setLeft(a);
         
-        Node b = new Node(2);
+        TreeNode b = new TreeNode(2);
         root.getLeft().setLeft(b);
         
-        Node c = new Node(11);
+        TreeNode c = new TreeNode(11);
         root.getLeft().setRight(c);
         
-        Node d = new Node(9);
+        TreeNode d = new TreeNode(9);
         root.getLeft().getRight().setLeft(d);
         
-        Node e = new Node(5);
+        TreeNode e = new TreeNode(5);
         root.getLeft().getRight().setRight(e);
         
-        Node f = new Node(8);
+        TreeNode f = new TreeNode(8);
         root.setRight(f);
         
-        Node g = new Node(13);
+        TreeNode g = new TreeNode(13);
         root.getRight().setRight(g);
         
-        Node h = new Node(7);
+        TreeNode h = new TreeNode(7);
         root.getRight().getRight().setLeft(h);
 
         System.out.println("LCA : " + LCA(root, b, e).getData());
