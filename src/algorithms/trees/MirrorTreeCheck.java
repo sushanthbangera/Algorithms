@@ -6,7 +6,7 @@
 package algorithms.trees;
 
 import java.util.Objects;
-import utils.binarytree.BinaryNode;
+import utils.binarytree.TreeNode;
 
 /**
  *
@@ -18,7 +18,7 @@ public class MirrorTreeCheck {
         Time Complexity: O(n)
         Space Complexity: O(n)
     */
-    public boolean isMirror(BinaryNode treeNode1, BinaryNode treeNode2) {
+    public boolean isMirror(TreeNode treeNode1, TreeNode treeNode2) {
         
         if (treeNode1 == null && treeNode2 == null) {
             return true;
