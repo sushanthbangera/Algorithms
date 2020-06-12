@@ -65,11 +65,11 @@ public class LCA {
         TreeNode h = new TreeNode(7);
         root.getRight().getRight().setLeft(h);
 
-        System.out.println("LCA : " + LCA(root, b, e).getData());
+        System.out.println("LCA : " + LCA(root, b, e).getVal());
         
-        System.out.println("LCA : " + LCA(root, f, h).getData());
+        System.out.println("LCA : " + LCA(root, f, h).getVal());
         
-        System.out.println("LCA : " + LCA(root, b, f).getData());
+        System.out.println("LCA : " + LCA(root, b, f).getVal());
         
     }
 }

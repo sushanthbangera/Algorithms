@@ -47,7 +47,7 @@ public class InorderTraversalCheck {
             return;
         }
         inorderTraversal(node.getLeft(), nodeList);
-        nodeList.add(node.getData());
+        nodeList.add(node.getVal());
         inorderTraversal(node.getRight(), nodeList);
     }
 
@@ -59,7 +59,7 @@ public class InorderTraversalCheck {
             return false;
         }
 
-        if (nodeList1.isEmpty() || nodeList1.get(0) != node.getData()) {
+        if (nodeList1.isEmpty() || nodeList1.get(0) != node.getVal()) {
             return false;
         }
         nodeList1.remove(0);

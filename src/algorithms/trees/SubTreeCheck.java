@@ -39,7 +39,7 @@ public class SubTreeCheck {
         }
         
         if (node1 != null && node2 != null) {
-            return (node1.getData() == node2.getData()) && 
+            return (node1.getVal() == node2.getVal()) && 
                     isIdentical(node1.getLeft(), node2.getLeft()) &&
                     isIdentical(node1.getRight(), node2.getRight());
         }

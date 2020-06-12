@@ -11,22 +11,22 @@ package utils.binarytree;
  */
 public class TreeNode {
     
-    private Integer data;
+    private Integer val;
     
     private TreeNode left;
     
     private TreeNode right;
 
     public TreeNode(Integer data) {
-        this.data = data;
+        this.val = data;
     }
 
-    public Integer getData() {
-        return data;
+    public Integer getVal() {
+        return val;
     }
 
-    public void setData(Integer data) {
-        this.data = data;
+    public void setVal(Integer data) {
+        this.val = data;
     }
 
     public TreeNode getLeft() {

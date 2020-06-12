@@ -28,7 +28,7 @@ public class MirrorTreeCheck {
             return false;
         }
         
-        return Objects.equals(treeNode1.getData(), treeNode2.getData()) &&
+        return Objects.equals(treeNode1.getVal(), treeNode2.getVal()) &&
                isMirror(treeNode1.getLeft(), treeNode2.getRight()) &&
                 isMirror(treeNode1.getRight(), treeNode2.getLeft());
     }

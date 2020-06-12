@@ -22,12 +22,12 @@ public class ValidateBST {
             return true;
         }
         // Value of root shouln't be grater than max value or less than min Value
-        if (max != null && root.getData() >= max || min != null && root.getData() <= min) {
+        if (max != null && root.getVal() >= max || min != null && root.getVal() <= min) {
             return false;
         }
         // For left node max Value would be root value and min is the current minimum
         // For right node, max value is the current max value and min is the root value
-        return validateBST(root.getLeft(), root.getData(), min)
-                && validateBST(root.getRight(), max, root.getData());
+        return validateBST(root.getLeft(), root.getVal(), min)
+                && validateBST(root.getRight(), max, root.getVal());
     }
 }
