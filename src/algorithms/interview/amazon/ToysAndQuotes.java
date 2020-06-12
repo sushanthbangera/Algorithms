@@ -9,60 +9,58 @@
 package algorithms.interview.amazon;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  *
  * @author Sushanth Bangera
  */
 public class ToysAndQuotes {
-    
-    public ArrayList<String>  getTopToys(List<String> toys, int toysCount,
+
+    public ArrayList<String> getTopToys(List<String> toys, int toysCount,
             int TopToys, List<String> quotes, int qoutesCount) {
-        
+
         HashMap<String, Integer> toyFreqMap = new HashMap<>();
-        
-        for (String toy : toys) {
-            for (String quote : quotes) {
-                String quotesInLowerCase = quote.replace("[^a-zA-Z]", " ").toLowerCase();
-                // String has contains() method as well -> quotesInLowerCase.contains(toy)
-                if (quotesInLowerCase.indexOf(toy) > 0) {
-                    if (toyFreqMap.containsKey(toy)) {
-                        toyFreqMap.put(toy, toyFreqMap.get(toy) + 1);
-                    } else {
-                        toyFreqMap.put(toy, 1);
-                    }
-                }
-            }
-        }
-        
-        // Sorting the map based on frequency value
-        List<Map.Entry<String, Integer>> entryList = new LinkedList<>(toyFreqMap.entrySet());
-        
-        Collections.sort(entryList, (entry1, entry2) -> {
-            int compareValue = entry2.getValue().compareTo(entry1.getValue());
-            if(compareValue == 0) {
-                return entry1.getKey().compareTo(entry2.getKey());
-            }
-            return compareValue;
+
+        toys.forEach((toy) -> {
+            quotes.stream().map((quote) -> quote.replace("[^a-zA-Z]", " ").toLowerCase())
+                    .filter((quotesInLowerCase) -> (quotesInLowerCase.contains(toy)))
+                    .forEach((_item) -> {
+                        toyFreqMap.put(toy, toyFreqMap.getOrDefault(toy, 0) + 1);
+                    });
         });
-        
-        HashMap<String, Integer> sortedMap = new LinkedHashMap<>();
-        entryList.forEach(item -> {
-            sortedMap.put(item.getKey(), item.getValue());
+
+        toyFreqMap.entrySet().forEach(it -> {
+            System.out.println("toy : " + it.getKey() + " -> freq " + it.getValue());
         });
-        
-        List<String> toysList = new ArrayList<>(sortedMap.keySet());
-        
-        if(toysList.size() > TopToys) {
-            toysList = toysList.subList(0, TopToys);
+
+        // Sorting the map based on frequency value using MaxHeap
+        PriorityQueue<String> maxHeap = new PriorityQueue<>((a, b) -> toyFreqMap.get(b) - toyFreqMap.get(a));
+        maxHeap.addAll(toyFreqMap.keySet());
+
+        final List<String> toysList = new ArrayList<>();
+        while (!maxHeap.isEmpty() && TopToys-- > 0) {
+            toysList.add(maxHeap.remove());
         }
-        
+
         return new ArrayList(toysList);
+    }
+
+    public static void main(String[] args) {
+        String toysArray[] = {"anacell", "cetracular", "betacellular", "services"};
+        String quotes[] = {
+            "Anacell provides the best services in the city",
+            "betacellular has awesome services",
+            "Best services provided by anacell, everyone should use anacell"};
+
+        ArrayList<String> topToys = new ToysAndQuotes().getTopToys(Arrays.asList(toysArray),
+                toysArray.length, 2, Arrays.asList(quotes), quotes.length);
+
+        topToys.forEach(toy -> {
+            System.out.print(toy + " ");
+        });
     }
 }
