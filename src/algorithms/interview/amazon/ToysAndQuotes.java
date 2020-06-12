@@ -41,7 +41,7 @@ public class ToysAndQuotes {
         PriorityQueue<String> maxHeap = new PriorityQueue<>((a, b) -> toyFreqMap.get(b) - toyFreqMap.get(a));
         maxHeap.addAll(toyFreqMap.keySet());
 
-        final List<String> toysList = new ArrayList<>();
+        List<String> toysList = new ArrayList<>();
         while (!maxHeap.isEmpty() && TopToys-- > 0) {
             toysList.add(maxHeap.remove());
         }
