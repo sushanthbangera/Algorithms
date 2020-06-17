@@ -11,11 +11,11 @@ package utils.binarytree;
  */
 public class TreeNode {
     
-    private Integer val;
+    public Integer val;
     
-    private TreeNode left;
+    public TreeNode left;
     
-    private TreeNode right;
+    public TreeNode right;
 
     public TreeNode(Integer data) {
         this.val = data;
