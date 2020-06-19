@@ -13,9 +13,10 @@ public class SpaceReplacer {
     
     public static void main(String[] args) {
         String str = "My name is Antony    ";
+        System.out.println("Input String: " + str);
         String replaceString = "%20";
         
-        System.out.println("The new String after replacement of spcae = " + replaceSpace(str, replaceString));
+        System.out.println("String after replacement of spcae: " + replaceSpace(str, replaceString));
     }
     
     public static String replaceSpace(String str, String replaceStr) {
