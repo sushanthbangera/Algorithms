@@ -26,7 +26,7 @@
 //  0 <= i,j <= 5
 //
 //Output Format : Print the largest (maximum) hourglass sum found in A.
-package algorithms;
+package algorithms.matrices;
 
 /**
  *
