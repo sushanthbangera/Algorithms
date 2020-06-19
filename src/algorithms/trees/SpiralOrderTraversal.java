@@ -115,6 +115,14 @@ public class SpiralOrderTraversal {
     }
 
     public static void main(String[] args) {
+        
+         /* Construct below tree
+		          1
+		       /     \
+		      2       3
+		     / \     / \
+		    4   5   6   7
+         */
 
         TreeNode root = new TreeNode(1);
 
@@ -127,7 +135,6 @@ public class SpiralOrderTraversal {
         root.getRight().setLeft(new TreeNode(6));
         root.getRight().setRight(new TreeNode(7));
 
-        System.out.println("-- Left View Method 1 --");
         spiralOrderTraversal(root);
 
         System.out.println();
