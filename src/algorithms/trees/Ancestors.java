@@ -28,7 +28,8 @@ public class Ancestors {
         boolean left = getAncestors(root.left, node);
         
         // if its not found in left sub tree, search the right sub tree
-        boolean right = true;
+        boolean right = false;
+        
         if (!left) {
             right = getAncestors(root.right, node);
         }
