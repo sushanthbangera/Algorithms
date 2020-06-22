@@ -26,10 +26,6 @@ public class LCA {
         
         TreeNode right = LCA (root.getRight(), n1, n2);
         
-        if (left == null && right == null) {
-            return null;
-        } 
-        
         if (left != null && right != null) {
             return root;
         }
@@ -39,37 +35,27 @@ public class LCA {
     
     public static void main(String[] args) {
 
-        TreeNode root = new TreeNode(3);
-        
-        TreeNode a = new TreeNode(6);
-        root.setLeft(a);
-        
-        TreeNode b = new TreeNode(2);
-        root.getLeft().setLeft(b);
-        
-        TreeNode c = new TreeNode(11);
-        root.getLeft().setRight(c);
-        
-        TreeNode d = new TreeNode(9);
-        root.getLeft().getRight().setLeft(d);
-        
-        TreeNode e = new TreeNode(5);
-        root.getLeft().getRight().setRight(e);
-        
-        TreeNode f = new TreeNode(8);
-        root.setRight(f);
-        
-        TreeNode g = new TreeNode(13);
-        root.getRight().setRight(g);
-        
-        TreeNode h = new TreeNode(7);
-        root.getRight().getRight().setLeft(h);
+         /* Construct below tree
+	          1
+	        /   \
+	       /     \
+	      2       3
+	       \     / \
+	        4   5   6
+	           / \
+	          7   8
+         */
 
-        System.out.println("LCA : " + LCA(root, b, e).getVal());
-        
-        System.out.println("LCA : " + LCA(root, f, h).getVal());
-        
-        System.out.println("LCA : " + LCA(root, b, f).getVal());
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.right = new TreeNode(4);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(6);
+        root.right.left.left = new TreeNode(7);
+        root.right.left.right = new TreeNode(8);
+
+        System.out.println("LCA = " + LCA(root, root.right.left.left, root.right.left.right).val);
         
     }
 }

@@ -25,6 +25,13 @@ public class Utility {
         }
         System.out.println();
     }
+    
+    public static <T> void printArray(T arr[]) {
+        for (T a : arr) {
+            System.out.print(a + " ");
+        }
+        System.out.println();
+    }
 
     public static void printArray(char arr[]) {
         for (char a : arr) {
