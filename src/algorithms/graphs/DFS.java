@@ -76,8 +76,8 @@ public class DFS {
         // For Iterative DFS
         boolean visited[] = new boolean[N];
         for (int i = 0; i < N; i++) {
-            if (!discovered[i]) {
-                iterativeDFS(graph, i, discovered);
+            if (!visited[i]) {
+                iterativeDFS(graph, i, visited);
             }
         }
     }
