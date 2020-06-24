@@ -67,6 +67,7 @@ public class DFS {
         
         boolean discovered[] = new boolean[N];
         
+        // For recursive DFS
         for (int i = 0; i < N; i++) {
             if (!discovered[i]) {
                 DFS(graph, i, discovered);
