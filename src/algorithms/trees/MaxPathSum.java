@@ -21,7 +21,7 @@ public class MaxPathSum {
 
         return res.val;
     }
-
+    
     private int maxPathSum(TreeNode root, Result result) {
 
         if (root == null) {
@@ -67,6 +67,6 @@ public class MaxPathSum {
         tree.getRight().getRight().setRight(new TreeNode(4));
 
         System.out.println("maximum path sum is : "
-                + new MaxPathSum().maxPathSum(tree));
+                + new MaxPathSum().maxPathSum(tree));   
     }
 }
