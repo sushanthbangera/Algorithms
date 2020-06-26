@@ -13,23 +13,27 @@ import java.util.List;
  * @author Sushanth Bangera
  */
 public class Graph {
-    
+
     public List<List<Integer>> adjacencyList = null;
-    
+
+    public boolean isUnDirected = false;
+
     // N is the no. of vertices
     public Graph(List<Edge> edges, int N) {
         adjacencyList = new ArrayList<>();
-        
+
         for (int i = 0; i < N; i++) {
             adjacencyList.add(new ArrayList<>());
-        } 
-        
+        }
+
         edges.forEach((edge) -> {
             int src = edge.src;
             int dest = edge.dest;
-            
+
             adjacencyList.get(src).add(dest);
-            adjacencyList.get(dest).add(src);
+            if (isUnDirected) {
+                adjacencyList.get(dest).add(src);
+            }
         });
     }
 }
