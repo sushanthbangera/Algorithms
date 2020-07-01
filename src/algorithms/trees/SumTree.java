@@ -1,8 +1,7 @@
 /*
  * Given a binary tree, check if it is a sum tree or not. 
- * In a sum tree, value at each non-leaf node is equal to the sum of 
- * all elements present in its left and right subtree. 
- * The value of a leaf node can be anything.
+ * In a sum tree, value at each non-leaf node is equal to the sum of all elements
+ * present in its left and right subtree. The value of a leaf node can be anything.
  */
 package algorithms.trees;
 
@@ -15,8 +14,8 @@ import utils.binarytree.TreeNode;
 public class SumTree {
 
     /*
-    Time: O(n)
-    Space: O(h)
+        Time: O(n)
+        Space: O(h)
     */
     public static int isSumTree(TreeNode root) {
 
