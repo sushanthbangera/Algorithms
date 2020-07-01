@@ -44,6 +44,17 @@ public class InorderTraversal {
         }
     }
     
+    public void reverseInorder(TreeNode root) {
+
+        if (root == null) {
+            return;
+        }
+
+        reverseInorder(root.right);
+        System.out.print(root.val + " ");
+        reverseInorder(root.left);
+    }
+    
     public static void main(String[] args) {
         
         /* Construct below tree
@@ -69,8 +80,10 @@ public class InorderTraversal {
         inOrder.inorder(root);
         
         System.out.println();
-        
         inOrder.inorderInterative(root);
+        
+        System.out.println();
+        inOrder.reverseInorder(root);
     }
     
 }
