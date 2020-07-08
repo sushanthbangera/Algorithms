@@ -38,6 +38,7 @@ public class ArrayManipulation {
         for (int i = 0; i < m; i++) {
             int a = in.nextInt();
             int b = in.nextInt();
+            
             int k = in.nextInt();
             arr[a - 1] += k;
             if (b < n) {
