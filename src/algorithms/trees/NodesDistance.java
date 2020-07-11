@@ -43,25 +43,6 @@ public class NodesDistance {
         return left != null ? left : right;
     }
 
-    private int level(TreeNode root, TreeNode node, int level) {
-
-        if (root == null) {
-            return Integer.MIN_VALUE;
-        }
-
-        if (root == node) {
-            return level;
-        }
-        // search node in left subtree
-        int left = level(root.left, node, level + 1);
-
-        if (left != Integer.MIN_VALUE) {
-            return left;
-        }
-
-        return level(root.right, node, level + 1);
-    }
-
     public int findLevel(TreeNode root, TreeNode node, int level) {
         // base case
         if (root == null) {
