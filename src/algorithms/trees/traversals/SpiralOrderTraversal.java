@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package algorithms.trees;
+package algorithms.trees.traversals;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
